@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Contact details"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <contact
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                    composite="{Boolean}true">
+                <field
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        name="./contact">
+                    <items jcr:primaryType="nt:unstructured">
+                        <contactGroup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                            <items jcr:primaryType="nt:unstructured">
+                                <number
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Number"
+                                        name="./number"/>
+                                <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Title"
+                                        name="./title"/>
+                                <subtitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Subtitle"
+                                        name="./subtitle"/>
+                                <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Description"
+                                        useFixedInlineToolbar="{Boolean}true"
+                                        name="./description"/>
+                                <file
+                                        granite:class="cmp-image__editor-file-upload"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        class="cq-droptarget"
+                                        enableNextGenDynamicMedia="{Boolean}true"
+                                        fieldLabel="File"
+                                        fileNameParameter="./fileName"
+                                        fileReferenceParameter="./fileReference"
+                                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                        name="./file"/>
+                            </items>
+                        </contactGroup>
+                    </items>
+                </field>
+            </contact>
+        </items>
+    </content>
+</jcr:root>
